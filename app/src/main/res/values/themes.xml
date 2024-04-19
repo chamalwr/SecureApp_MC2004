@@ -2,4 +2,13 @@
 <resources>
 
     <style name="Theme.SecureApp_MC2004" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.SecureApp_MC2004.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SecureApp_MC2004.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SecureApp_MC2004.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -5,4 +5,5 @@
     <string name="exit">Exit</string>
     <string name="debug_enabled_warning">We have noticed that this device is enabled with \"Developer options\" This Poses a Potential Risk. Please Switch off Developer Options and Try Opening the Application Again!</string>
     <string name="debug_enabled_war_desc">Image palceholder for warning image file on debug enabled mode</string>
+    <string name="action_settings">Settings</string>
 </resources>

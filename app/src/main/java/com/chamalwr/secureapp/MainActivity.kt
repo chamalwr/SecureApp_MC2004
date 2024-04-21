@@ -32,6 +32,5 @@ class MainActivity : ComponentActivity() {
 fun isDeveloperModeEnabled(applicationContext: Context): Boolean {
     val isAbdEnabled = Settings.Secure.getInt(applicationContext.contentResolver, Settings.Global.ADB_ENABLED, 0) != 0
     val isDebugModeEnabled = Settings.Secure.getInt(applicationContext.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
-    return false
     return isAbdEnabled or isDebugModeEnabled
 }

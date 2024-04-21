@@ -5,13 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.activity.ComponentActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.activity.OnBackPressedCallback;
 
 import com.chamalwr.secureapp.R;
 
-public class DebugThreatAlert extends Activity {
+public class DebugThreatAlert extends ComponentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,17 @@ public class DebugThreatAlert extends Activity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finishAndRemoveTask();
+                finishAffinity();
             }
         });
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+               finishAffinity();
+            }
+        };
+
+        getOnBackPressedDispatcher().addCallback(this, callback);
     }
 }

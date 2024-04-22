@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.retrofi2)
     implementation(libs.retrofigson)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.biometric.v120alpha05)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

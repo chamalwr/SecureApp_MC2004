@@ -1,15 +1,14 @@
 package com.chamalwr.secureapp.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.ComponentActivity;
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.activity.OnBackPressedCallback;
 
 import com.chamalwr.secureapp.R;
 

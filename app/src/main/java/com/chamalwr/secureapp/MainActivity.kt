@@ -63,29 +63,29 @@ class MainActivity :  AppCompatActivity() {
                     biometricPrompt.authenticate(promptInfo)
                 }
                 BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE -> {
-                    Log.d("AUTH_INFO", "App can authenticate using biometrics due to : BIOMETRIC_ERROR_NO_HARDWARE")
+                    Log.d("AUTH_INFO", "App cannot authenticate using biometrics due to : BIOMETRIC_ERROR_NO_HARDWARE")
                     loginUsingDeviceCredentials()
                 }
                 BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE -> {
-                    Log.d("AUTH_INFO", "App can authenticate using biometrics due to : BIOMETRIC_ERROR_HW_UNAVAILABLE")
+                    Log.d("AUTH_INFO", "App cannot authenticate using biometrics due to : BIOMETRIC_ERROR_HW_UNAVAILABLE")
                     loginUsingDeviceCredentials()
                 }
                 BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> {
-                    Log.d("AUTH_INFO", "App can authenticate using biometrics due to : BIOMETRIC_ERROR_NONE_ENROLLED")
+                    Log.d("AUTH_INFO", "App cannot authenticate using biometrics due to : BIOMETRIC_ERROR_NONE_ENROLLED")
                     loginUsingDeviceCredentials()
                 }
                 BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED -> {
-                    Log.d("AUTH_INFO", "App can authenticate using biometrics due to : BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED")
+                    Log.d("AUTH_INFO", "App cannot authenticate using biometrics due to : BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED")
                     loginUsingDeviceCredentials()
                 }
 
                 BiometricManager.BIOMETRIC_ERROR_UNSUPPORTED -> {
-                    Log.d("AUTH_INFO", "App can authenticate using biometrics due to : BIOMETRIC_ERROR_UNSUPPORTED")
+                    Log.d("AUTH_INFO", "App cannot authenticate using biometrics due to : BIOMETRIC_ERROR_UNSUPPORTED")
                     loginUsingDeviceCredentials()
                 }
 
                 BiometricManager.BIOMETRIC_STATUS_UNKNOWN -> {
-                    Log.d("AUTH_INFO", "App can authenticate using biometrics due to : BIOMETRIC_STATUS_UNKNOWN")
+                    Log.d("AUTH_INFO", "App cannot authenticate using biometrics due to : BIOMETRIC_STATUS_UNKNOWN")
                     loginUsingDeviceCredentials()
                 }
             }
@@ -95,7 +95,7 @@ class MainActivity :  AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     private fun loginUsingDeviceCredentials(){
         val biometricManager = BiometricManager.from(this@MainActivity)
-        if (biometricManager.canAuthenticate(BiometricManager.Authenticators.DEVICE_CREDENTIAL) == BiometricManager.BIOMETRIC_SUCCESS) {
+        if (biometricManager.canAuthenticate(DEVICE_CREDENTIAL) == BiometricManager.BIOMETRIC_SUCCESS) {
             val promptInfo = BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Unlock using your device PIN, pattern, or password.")
                 .setSubtitle("Login to MC2004 SecureApp")

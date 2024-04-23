@@ -32,7 +32,7 @@ public class OwnerDataViewActivity extends AppCompatActivity {
             return insets;
         });
         OwnerController ownerController = new OwnerController();
-        ownerController.getOwners(1, 30).thenAccept(response -> {
+        ownerController.getOwners(1, 120).thenAccept(response -> {
             runOnUiThread(() -> {
                 List<Owner> ownerListResponse = response.getOwners();
                 ListView ownerDataListView = findViewById(R.id.ownersListView);
